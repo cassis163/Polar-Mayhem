@@ -50,11 +50,11 @@ public class Zoop {
             return;
         }
 
-        int penguinNumber = MathHelper.getRandomNumber(0, getNumberOfAlivePenguins());
+        int penguinNumber = MathHelper.getRandomNumber(0, getNumberOfAlivePenguins() - 1);
 
         Penguin penguinToFeed = getAllPenguins()[penguinNumber];
 
-        TextHelper.println(String.format("Penguin %d snatches a fish.", penguinNumber));
+        TextHelper.println(String.format("Penguin %d snatches a fish.", penguinNumber + 1));
 
         penguinToFeed.feed(this.fishEnergy);
     }
