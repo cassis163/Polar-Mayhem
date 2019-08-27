@@ -1,2 +1,3 @@
-public class Penguin {
+public class Penguin extends Animal {
+
 }
