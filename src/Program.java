@@ -6,7 +6,7 @@ public class Program {
 
         TextHelper.showWelcome();
 
-        while (zoop.getGameState() == zoop.GameState.PLAYING) {
+        while (zoop.getGameState() == Zoop.GameState.PLAYING) {
             String input = TextHelper.readln();
 
             switch (input) {
@@ -20,7 +20,7 @@ public class Program {
                     break;
                 case "feed polar bear":
                 case "feed polarbear":
-                    zoop.feedPolarBear();
+                    
                     break;
                 case "help":
                 case "?":
