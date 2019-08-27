@@ -1,7 +1,14 @@
 public abstract class Animal {
+    protected final int energyUsage;
+
     private boolean alive = true;
     private int energy;
-    private int energyThreshold;
+    private final int energyThreshold;
+
+    protected Animal(int energyThreshold, int energyUsage) {
+        this.energyThreshold = energyThreshold;
+        this.energyUsage = energyUsage;
+    }
 
     public boolean isAlive() {
         return alive;
@@ -21,5 +28,10 @@ public abstract class Animal {
 
     public int getEnergy() {
         return energy;
+    }
+
+    public void nextDay() {
+        if (this.isStarving()) this.die();
+        this.energy -= this.energyUsage;
     }
 }
