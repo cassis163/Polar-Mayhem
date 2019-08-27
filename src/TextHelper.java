@@ -75,6 +75,10 @@ public class TextHelper {
         println("The zoo caretaker ate the fish himself.");
     }
 
+    public static void showPolarBearEatsPenguin() {
+        println("The polar bear has eaten a penguin!");
+    }
+
     public static void showBye() {
         println("Bye ...");
     }

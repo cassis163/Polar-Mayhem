@@ -50,19 +50,17 @@ public class Zoop {
             return;
         }
 
-        int penguinNumber = MathHelper.getRandomNumber(0, getNumberOfAlivePenguins());
+        int penguinNumber = MathHelper.getRandomNumber(0, getNumberOfAlivePenguins()-1);
 
         Penguin penguinToFeed = getAllPenguins()[penguinNumber];
 
-        TextHelper.println(String.format("Penguin %d snatches a fish.", penguinNumber));
+        TextHelper.println(String.format("Penguin %d snatches a fish.", penguinNumber+1));
 
         penguinToFeed.feed(this.fishEnergy);
     }
 
      public void feedPolarBear() {
-        if (polarBear.isAlive()) {
-            polarBear.feed(this.fishEnergy);
-        }
+        polarBear.feed(this.fishEnergy);
      }
 
      public int getNumberOfAlivePenguins() {
@@ -88,10 +86,11 @@ public class Zoop {
     public void nextDay() {
         timeHelper.nextDay();
         for (Penguin penguin : this.getAlivePenguins()) {
+            System.out.println(String.format("Penguin: %d", penguin.getEnergy()));
             penguin.nextDay();
         }
-
-        polarBear.nextDay();
+        System.out.println(String.format("Polar bear: %d", polarBear.getEnergy()));
+        polarBear.nextDay(this.getAlivePenguins());
     }
 
     public void showHelp() {
