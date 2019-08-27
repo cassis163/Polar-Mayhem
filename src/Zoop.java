@@ -1,5 +1,3 @@
-import org.w3c.dom.Text;
-
 import java.util.Arrays;
 
 public class Zoop {
@@ -47,9 +45,16 @@ public class Zoop {
     }
 
     public void feedPenguin() {
-        int penguinNumber = MathHelper.getRandomNumber(0, getNumberOfAlivePenguins() - 1);
+        if (getNumberOfAlivePenguins() == 0) {
+            TextHelper.showNoPenguinFed();
+            return;
+        }
+
+        int penguinNumber = MathHelper.getRandomNumber(0, getNumberOfAlivePenguins());
 
         Penguin penguinToFeed = getAllPenguins()[penguinNumber];
+
+        TextHelper.println(String.format("Penguin %d snatches a fish.", penguinNumber));
 
         penguinToFeed.feed(this.fishEnergy);
     }

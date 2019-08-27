@@ -4,6 +4,11 @@ public class PolarBear extends Animal {
     }
 
     public void hunt(Penguin[] penguins) {
+        if (penguins.length == 0) {
+            TextHelper.showNoPenguinToHunt();
+            return;
+        }
+
         Penguin penguin = penguins[MathHelper.getRandomNumber(0, penguins.length)];
 
         hunt(penguin);
