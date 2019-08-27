@@ -18,4 +18,8 @@ public abstract class Animal {
     public boolean isStarving() {
         return (alive == true && energy < energyThreshold);
     }
+
+    public int getEnergy() {
+        return energy;
+    }
 }

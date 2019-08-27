@@ -7,5 +7,6 @@ public class PolarBear extends Animal {
 
     public void hunt(Penguin penguin) {
         penguin.die();
+        this.feed(penguin.getEnergy());
     }
 }
