@@ -86,10 +86,8 @@ public class Zoop {
     public void nextDay() {
         timeHelper.nextDay();
         for (Penguin penguin : this.getAlivePenguins()) {
-            System.out.println(String.format("Penguin: %d", penguin.getEnergy()));
             penguin.nextDay();
         }
-        System.out.println(String.format("Polar bear: %d", polarBear.getEnergy()));
         polarBear.nextDay(this.getAlivePenguins());
     }
 
