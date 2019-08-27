@@ -10,27 +10,27 @@ public class Program {
             String input = TextHelper.readln();
 
             switch (input) {
-                case 'close':
-                case 'quit':
-                case 'exit':
+                case "close":
+                case "quit":
+                case "exit":
                     zoop.close();
                     break;
-                case 'feed penguin':
+                case "feed penguin":
                     zoop.feedPenguin();
                     break;
-                case 'feed polar bear':
-                case 'feed polarbear':
+                case "feed polar bear":
+                case "feed polarbear":
                     zoop.feedPolarBear();
                     break;
-                case 'help':
-                case '?':
+                case "help":
+                case "?":
                     zoop.showHelp();
                     break;
-                case 'new day':
+                case "new day":
                     zoop.nextDay();
                     zoop.showStatus();
                     break;
-                case 'status':
+                case "status":
                     zoop.showStatus();
                     break;
                 default:
