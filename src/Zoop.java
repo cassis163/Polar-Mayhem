@@ -47,7 +47,7 @@ public class Zoop {
     }
 
     public void feedPenguin() {
-        int penguinNumber = MathHelper.getRandomNumber(0, getNumberOfAlivePenguins());
+        int penguinNumber = MathHelper.getRandomNumber(0, getNumberOfAlivePenguins() - 1);
 
         Penguin penguinToFeed = getAllPenguins()[penguinNumber];
 

@@ -11,7 +11,7 @@ public class TimeHelper {
     }
 
     public boolean areDaysLeft() {
-        return (daysLeft <= 0);
+        return (daysLeft > 0);
     }
 
 }

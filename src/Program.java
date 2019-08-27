@@ -20,7 +20,7 @@ public class Program {
                     break;
                 case "feed polar bear":
                 case "feed polarbear":
-                    
+
                     break;
                 case "help":
                 case "?":
