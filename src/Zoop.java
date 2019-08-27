@@ -47,9 +47,16 @@ public class Zoop {
     }
 
     public void feedPenguin() {
+        if (getNumberOfAlivePenguins() == 0) {
+            TextHelper.showNoPenguinFed();
+            return;
+        }
+
         int penguinNumber = MathHelper.getRandomNumber(0, getNumberOfAlivePenguins());
 
         Penguin penguinToFeed = getAllPenguins()[penguinNumber];
+
+        TextHelper.println(String.format("Penguin %d snatches a fish.", penguinNumber));
 
         penguinToFeed.feed(this.fishEnergy);
     }
