@@ -5,7 +5,8 @@ public abstract class Animal {
     private int energy;
     private final int energyThreshold;
 
-    protected Animal(int energyThreshold, int energyUsage) {
+    protected Animal(int energy, int energyThreshold, int energyUsage) {
+        this.energy  = energy;
         this.energyThreshold = energyThreshold;
         this.energyUsage = energyUsage;
     }
@@ -15,7 +16,7 @@ public abstract class Animal {
     }
 
     public void feed(int energy) {
-        energy += energy;
+        this.energy += energy;
     }
 
     public void die() {
@@ -23,11 +24,11 @@ public abstract class Animal {
     }
 
     public boolean isStarving() {
-        return (alive == true && energy < energyThreshold);
+        return (this.isAlive() && energy < energyThreshold);
     }
 
     public int getEnergy() {
-        return energy;
+        return this.energy;
     }
 
     public void nextDay() {

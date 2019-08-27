@@ -60,9 +60,7 @@ public class Zoop {
     }
 
      public void feedPolarBear() {
-        if (polarBear.isAlive()) {
-            polarBear.feed(this.fishEnergy);
-        }
+        polarBear.feed(this.fishEnergy);
      }
 
      public int getNumberOfAlivePenguins() {
@@ -90,8 +88,7 @@ public class Zoop {
         for (Penguin penguin : this.getAlivePenguins()) {
             penguin.nextDay();
         }
-
-        polarBear.nextDay();
+        polarBear.nextDay(this.getAlivePenguins());
     }
 
     public void showHelp() {

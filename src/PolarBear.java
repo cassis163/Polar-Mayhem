@@ -1,6 +1,6 @@
 public class PolarBear extends Animal {
     public PolarBear() {
-        super(150, 300);
+        super(1000, 150, 300);
     }
 
     public void hunt(Penguin[] penguins) {
@@ -8,14 +8,24 @@ public class PolarBear extends Animal {
             TextHelper.showNoPenguinToHunt();
             return;
         }
-
-        Penguin penguin = penguins[MathHelper.getRandomNumber(0, penguins.length)];
-
+        Penguin penguin = penguins[MathHelper.getRandomNumber(0, penguins.length-1)];
         hunt(penguin);
     }
 
     public void hunt(Penguin penguin) {
         penguin.die();
         this.feed(penguin.getEnergy());
+
+        TextHelper.showPolarBearEatsPenguin();
+    }
+
+    public void nextDay(Penguin[] penguins) {
+        this.nextDay();
+        if (this.isStarving()) this.hunt(penguins);
+    }
+
+    @Override
+    public boolean isAlive() {
+        return true;
     }
 }
